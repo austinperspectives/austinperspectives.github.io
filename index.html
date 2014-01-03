@@ -9,8 +9,11 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <style type="text/css">
+
       /* Element overrides. */
       img { height: auto; max-width: 100%; }
+      a, a:visited { color: #666; }
+      a:hover { color: #999; }
 
       /* Utility classes. */
       .clearfix { *zoom: 1; }
@@ -40,7 +43,7 @@
       .container { width: 100%; }
       .row { }
       .column { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; padding: 1em; }
-      .row .column { padding: 1em 0; }
+      .row .column { padding: 0; }
       .column-sidebar { width: 300px; }
       .column-main { margin-left: 300px; }
       .half-column { width: 50%; }
@@ -48,7 +51,7 @@
 
       /* Navigation. */
       nav ul { list-style-type: none; margin: 0.5em 0 0; padding: 0; }
-      nav ul li { margin: 0.5em 0; }
+      nav ul li { margin: 1em 0; }
       nav ul li a, nav ul li a:visited { color: #efefef; text-decoration: none; }
       nav ul li a:hover { color: #fff; text-decoration: underline; }
 
@@ -56,22 +59,33 @@
       h1, h2, h3, h4, h5, h6 { margin-bottom: 0.25em; }
       #sidebar { position: fixed; }
       #logo { }
-      #logo-image { padding: 0 2em; }
+      #logo-image { background: url("images/psp-world-logo.png") #333 center center no-repeat; background-size: 200px 200px; padding: 0; width: 200px; height: 200px; margin: 0 auto; }
 
-      #location-map-container { position: relative; height: 300px; }
+      #location-map-container { position: relative; height: 550px; }
       #location-map { position: absolute; height: 100%; width: 100%; }
+
+      .class-info h4 { margin: 0; }
+      .class-info p { margin: 0.5em 0;}
 
       /* Backgrounds. */
       #main { background: #efefef; }
       .container, #sidebar { background: #333; }
 
+      .class-info { border-style: solid; border-width: 1px; margin-bottom: 1em; padding: 0.5em; }
+      #central-class-info { background: #9fc3ff; border-color: #476669; }
+      #campus-class-info { background: #fad199; border-color: #987545; }
+      #south-class-info { background: #b7dbab; border-color: #528547; }
+
       /* Typography. */
+      body { color: #333; }
       h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; text-transform: uppercase; }
+      footer { color: #ccc; }
       #sidebar { color: #efefef; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; text-transform: uppercase; }
       #logo { font-size: 1.4em; }
       #main { font-family: Georgia, Times, "Times New Roman", serif; }
       .not-bold { font-weight: normal; }
       .lowercase { text-transform: lowercase; }
+      .normalcase { text-transform: none; }
       .serif { font-family: Georgia, Times, "Times New Roman", serif; }
 
       /* For anything less than a desktop. */
@@ -91,6 +105,7 @@
 
         #sidebar { position: static; }
         #logo-image img { max-height: 150px; }
+        #central-class-info { margin-top: 1em; }
       }
     </style>
   </head>
@@ -100,8 +115,8 @@
       <div id="sidebar" class="left column stretch-vertically column-sidebar vertical-align-parent">
           <div class="center center-align vertical-align-child">
             <div id="logo">
-              <p class="half-top-margin half-bottom-margin">Austin<br />Perspectives</p>
-              <div id="logo-image"><img src="images/psp-world-logo.png" /></div>
+              <!--p class="half-top-margin half-bottom-margin">Austin<br />Perspectives</p-->
+              <div id="logo-image"><!--img src="images/psp-world-logo.png" /--></div>
             </div>
             <nav>
               <ul>
@@ -115,41 +130,78 @@
 
       <div id="main" class="right column stretch-vertically column-main">
 
-        <h1 class="no-top-margin">Perspectives <em class="lowercase not-bold serif"><small>on the</small></em> World Christian Movement <em class="lowercase not-bold serif"><small>in</small></em> Austin</h1>
+        <header>
+          <h1 class="no-top-margin">Perspectives <em class="lowercase not-bold serif"><small>on the</small></em> World Christian Movement <em class="lowercase not-bold serif"><small>in</small></em> Austin</h1>
+        </header>
 
         <h2 id="about">About</h2>
-        <p class="no-top-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod dolor ut dignissim faucibus. Donec id tincidunt est, vel hendrerit dui. Duis ac ligula enim. Vivamus non nisi nibh. Vivamus sapien augue, pharetra et libero ut, blandit pellentesque odio. Sed facilisis nisl ut justo sodales vehicula. Mauris non imperdiet magna, vel gravida ante. Sed euismod sem quis elit feugiat suscipit. Mauris rhoncus arcu quis mi hendrerit euismod. In pretium magna sed mi porttitor, ut venenatis massa ultricies. Quisque semper, nulla id volutpat pharetra, metus urna pellentesque felis, eu gravida turpis tortor non ipsum. Pellentesque dictum ut ipsum sed rutrum.</p>
+        <p class="no-top-margin"><a href="http://www.perspectives.org/" target="_blank">Perspectives</a> is a 15-week course that will change the way you view the world around you. You'll have your eyes opened to the heart and purpose of God and see how you can take part in His work all over the world. A fantastic array of international missiologists and instructors will challenge and inspire you with their personal experiences that will open your eyes to see just how big God is and how much He desires that all might come to know Him.</p>
 
-        <p>Curabitur aliquam orci at magna euismod, vel facilisis mauris venenatis. Pellentesque porta lacinia neque, vitae mattis justo dictum eget. Cras tempus id velit non rhoncus. Vivamus ut dolor eu arcu dictum aliquam a eu orci. Suspendisse a iaculis est. Sed lorem quam, vestibulum at suscipit eu, viverra eget tellus. Aliquam gravida lectus leo, id varius elit placerat et. Aenean eu sagittis velit. Sed ante enim, laoreet sit amet fringilla et, eleifend quis ligula. Vestibulum dictum turpis at varius tincidunt.</p>
+        <p>You can <a href="http://www.perspectives.org/About#/HTML/course_overview.htm" target="_blank">read more about the class</a> on the Perspectives website.</p>
 
         <h2 id="classes">Classes</h2>
+        <p class="no-top-margin">There will be three locations to take Perspectives in Austin for Spring 2014:</p>
+
         <div class="row clearfix">
-          <div class="column half-column left">
-            <div id="location-map-container">
-              <iframe id="location-map" src="https://mapsengine.google.com/map/embed?mid=zOIgw2d78WI8.kTX_xkuvy3cs" frameborder="0"></iframe>
-            </div>
+          <div id="location-map-container" class="column half-column left">
+            <iframe id="location-map" src="https://mapsengine.google.com/map/embed?mid=zOIgw2d78WI8.kTX_xkuvy3cs" frameborder="0"></iframe>
           </div>
 
           <div class="column half-column right">
             <div class="full-left-padding">
-              <h4 class="no-top-margin">Central</h4>
-              <p><a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422060">Class Website</a></p>
+              <div id="central-class-info" class="class-info">
+                <h4>Central <span class="not-bold serif normalcase">(<a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422060" target="_blank">Class Website</a>)</span></h4>
+                <p>Tuesdays, 6:30&mdash;9:30pm</p>
+                <p>
+                  <strong>For the City Center</strong><br />
+                  <a href="http://goo.gl/maps/juMdO" target="_blank">500 E St. Johns Ave.<br />
+                  Austin, TX 78752</a>
+                </p>
+                <p>
+                  Send questions to <strong>Enoch Shih</strong> at <strong>(512) 964-1287</strong> <em>or</em> <a href="mailto:enoch.shih@mobilization.org"><strong>enoch.shih@mobilization.org</strong></a>.
+                </p>
+              </div>
 
-              <h4>Campus</h4>
-              <p><a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422036">Class Website</a></p>
+              <div id="campus-class-info" class="class-info">
+                <h4>Campus <span class="not-bold serif normalcase">(<a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422036" target="_blank">Class Website</a>)</span></h4>
+                <p>Sundays, 6:30&mdash;9:30pm</p>
+                <p>
+                  <strong>Baptist Student Ministry</strong><br />
+                  <a href="http://goo.gl/maps/YsEvh" target="_blank">2204 San Antonio St.<br />
+                  Austin, TX 78705</a>
+                </p>
+                <p>
+                  Send questions to <strong>Renee Hale</strong> at <strong>(405) 338-0207</strong> <em>or</em> <a href="mailto:renee.s.hale@gmail.com"><strong>renee.s.hale@gmail.com</strong></a>.
+                </p>
+              </div>
 
-              <h4>South</h4>
-              <p><a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422061">Class Website</a></p>
+              <div id="south-class-info" class="class-info">
+                <h4>South <span class="not-bold serif normalcase">(<a href="https://class.perspectives.org/Visitor/Public.aspx?ClassId=422061" target="_blank">Class Website</a>)</span></h4>
+                <p>Mondays, 6:00&mdash;9:00pm</p>
+                <p>
+                  <strong>Hope in the City Church</strong><br />
+                  <a href="http://goo.gl/maps/pHKoZ" target="_blank">4407 Monterrey Oaks<br />
+                  Austin, TX 78749</a>
+                </p>
+                <p>
+                  Send questions to <strong>Chris Padgett</strong> at <strong>(512) 412-2708</strong> <em>or</em> <a href="mailto:southaustinperspectives2014@gmail.com"><strong>southaustinperspectives2014@gmail.com</strong></a>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <p class="no-top-margin">Duis aliquam, purus a tristique semper, lorem lectus blandit erat, et imperdiet urna mi vel eros. In egestas odio urna, sed elementum justo eleifend in. Etiam imperdiet turpis nisl, a rhoncus purus placerat a. Cras massa metus, tincidunt vitae bibendum nec, egestas eget tortor. Duis eu dolor enim. Praesent condimentum eros euismod tortor commodo aliquet. Vestibulum et dolor vel leo scelerisque eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut suscipit auctor nulla adipiscing rhoncus. Integer lobortis adipiscing dui, vel tempor tortor viverra a. Aenean ac bibendum erat.</p>
+        <p class="no-top-margin">All classes begin the week of January 12, but the <strong>first two weeks of class are free!</strong> Come check it out and you can register at every location.</p>
 
         <h2 id="contact">Contact</h2>
-        <p class="no-top-margin no-bottom-margin">Duis ornare vitae velit non interdum. Proin nulla arcu, dignissim a libero ac, scelerisque mattis felis. Nulla ullamcorper dui eget iaculis congue. Nunc luctus laoreet augue, eu commodo arcu venenatis sit amet. Donec vel congue nulla. Mauris dui nisi, adipiscing id enim sit amet, eleifend iaculis diam. Proin pellentesque eros quis lorem rhoncus semper. Nam commodo erat sit amet convallis gravida.</p>
+        <p class="no-top-margin no-bottom-margin">For any information about Perspectives, feel free to email any of the coordinators above or you can send questions to <a href="mailto:admin@austinperspectives.org">admin@austinperspectives.org</a>.</p>
 
-        <p class="no-bottom-margin">Donec laoreet semper lobortis. Proin id dui in risus iaculis posuere. Aliquam a lacus et arcu mollis condimentum vel ultricies tellus. Ut molestie, felis at placerat dapibus, ligula massa tincidunt odio, vel elementum nibh arcu mollis nibh. Mauris et purus quis tortor blandit rutrum. Vivamus aliquam egestas pellentesque. Suspendisse tempus sapien sit amet dui molestie mattis. Fusce turpis purus, fermentum non accumsan eu, condimentum non diam. In vel ante egestas, adipiscing velit nec, sagittis enim. Duis dictum pharetra tortor non vestibulum. Donec fermentum nisi id pellentesque eleifend. Pellentesque sodales lorem id elit iaculis hendrerit.</p>
+        <p class="no-bottom-margin">For location-specific questions, please contact the class coordinators for your location.</p>
+
+        <footer>
+          <p class="center-align no-bottom-margin"><small>&copy; Perspectives 2014 unless otherwise noted.</small></p>
+          <!-- Created by Benry Yip. -->
+        </footer>
       </div>
     </div>
 
